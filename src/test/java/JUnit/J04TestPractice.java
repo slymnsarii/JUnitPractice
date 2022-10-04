@@ -28,4 +28,23 @@ public class J04TestPractice {
     private int bolumIslem(int x, int y) {
         return x/y;
     }
+
+    @Test
+    @DisplayName("testException2 DisplayName ile verildi")
+    void testException2(){
+        int age=-15;
+        assertThrows(IllegalArgumentException.class, ()-> checkAge(age));
+    }
+
+    private void checkAge(int age) {//sart ile belirlenen bir age icin test'i yapildi
+        if (age<0){
+            throw new IllegalArgumentException();
+        }else {
+            System.out.println(age);
+        }
+
+    }
+    /*
+    burda test gecmezse consele'a bakip orda yazana gore ayarla
+     */
 }
